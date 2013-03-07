@@ -1,3 +1,6 @@
 [submodule "data/codemirror"]
 	path = data/codemirror
 	url = https://github.com/marijnh/CodeMirror.git
+[submodule "data/deck.js"]
+	path = data/deck.js
+	url = https://github.com/imakewebthings/deck.js.git
