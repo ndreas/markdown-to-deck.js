@@ -16,24 +16,24 @@ $endif$
   <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
 
   <!-- Required stylesheet -->
-  <link rel="stylesheet" href="$deck-path$core/deck.core.css">
+  <link rel="stylesheet" href="$data-dir$deck.js/core/deck.core.css">
 
   <!-- Extension CSS files go here. Remove or add as needed. -->
-  <link rel="stylesheet" href="$deck-path$extensions/goto/deck.goto.css">
-  <link rel="stylesheet" href="$deck-path$extensions/menu/deck.menu.css">
-  <link rel="stylesheet" href="$deck-path$extensions/navigation/deck.navigation.css">
-  <link rel="stylesheet" href="$deck-path$extensions/status/deck.status.css">
-  <link rel="stylesheet" href="$deck-path$extensions/hash/deck.hash.css">
-  <link rel="stylesheet" href="$deck-path$extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="$data-dir$deck.js/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="$data-dir$deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="$data-dir$deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="$data-dir$deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="$data-dir$deck.js/extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="$data-dir$deck.js/extensions/scale/deck.scale.css">
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" href="$deck-path$themes/style/web-2.0.css">
+  <link rel="stylesheet" href="$data-dir$$if(style-theme)$$style-theme$$else$deck.js/themes/style/swiss.css$endif$">
 
   <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-  <link rel="stylesheet" href="$deck-path$themes/transition/horizontal-slide.css">
+  <link rel="stylesheet" href="$data-dir$$if(transition-theme)$$transition-theme$$else$deck.js/themes/transition/horizontal-slide.css$endif$">
 
   <!-- Required Modernizr file -->
-  <script src="$deck-path$modernizr.custom.js"></script>
+  <script src="$data-dir$deck.js/modernizr.custom.js"></script>
 
 $if(math)$
   $math$
@@ -41,6 +41,7 @@ $endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
+
 </head>
 
 <body class="deck-container">
@@ -85,17 +86,17 @@ $endfor$
 
 
 <!-- Required JS files. -->
-<script src="$deck-path$jquery-1.7.2.min.js"></script>
-<script src="$deck-path$core/deck.core.js"></script>
+<script src="$data-dir$deck.js/jquery-1.7.2.min.js"></script>
+<script src="$data-dir$deck.js/core/deck.core.js"></script>
 
 <!-- Extension JS files. Add or remove as needed. -->
-<script src="$deck-path$core/deck.core.js"></script>
-<script src="$deck-path$extensions/hash/deck.hash.js"></script>
-<script src="$deck-path$extensions/menu/deck.menu.js"></script>
-<script src="$deck-path$extensions/goto/deck.goto.js"></script>
-<script src="$deck-path$extensions/status/deck.status.js"></script>
-<script src="$deck-path$extensions/navigation/deck.navigation.js"></script>
-<script src="$deck-path$extensions/scale/deck.scale.js"></script>
+<script src="$data-dir$deck.js/core/deck.core.js"></script>
+<script src="$data-dir$deck.js/extensions/hash/deck.hash.js"></script>
+<script src="$data-dir$deck.js/extensions/menu/deck.menu.js"></script>
+<script src="$data-dir$deck.js/extensions/goto/deck.goto.js"></script>
+<script src="$data-dir$deck.js/extensions/status/deck.status.js"></script>
+<script src="$data-dir$deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="$data-dir$deck.js/extensions/scale/deck.scale.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
