@@ -37,17 +37,6 @@
     font-size: 3em;
 }
 
-.deck-container pre,
-.deck-container code {
-    font-family: "Inconsolata", "Ubuntu Mono", "Menlo", "Bitstream Vera Sans Mono", "Consolas", "Monaco", "Courier New", monospace;
-    text-align: left;
-}
-.deck-container pre {
-    padding: 0.2em 1em;
-    max-height: 12.5em;
-    overflow: auto;
-}
-
 .deck-container ul,
 .deck-container ol {
     margin-right: 2em;
@@ -82,21 +71,40 @@
     padding: 0.5em 1em;
     display: inline-block;
     background: #fff;
+    text-align: left;
 }
-.deck-container blockquote:before,
+.deck-container blockquote p:first-child:before,
 .deck-container q:before {
+    display: inline;
     content: '\201C';
 }
-.deck-container blockquote:after,
+.deck-container blockquote p:last-child:after,
 .deck-container q:after {
     content: '\201D';
 }
 
-.deck-container blockquote p:first-child,
-.deck-container blockquote p:last-child {
-    display: inline-block;
-}
 .deck-container blockquote p:last-child {
     margin: 0;
 }
 
+.deck-container pre,
+.deck-container code,
+.deck-container .CodeMirror,
+.deck-container .deck-codemirror-result {
+    font-family: "Courier", "Courier New", monospace !important;
+    text-align: left;
+}
+.deck-container pre,
+.deck-container .CodeMirror,
+.deck-container .deck-codemirror-result {
+    overflow: auto;
+    line-height: 1.3em !important;
+}
+.deck-container pre {
+    padding: 0.2em 1em;
+    max-height: 11.7em;
+}
+
+.deck-container .CodeMirror {
+    max-height: 12.2em;
+}

@@ -26,6 +26,10 @@ $endif$
   <link rel="stylesheet" href="$data-dir$deck.js/extensions/hash/deck.hash.css">
   <link rel="stylesheet" href="$data-dir$deck.js/extensions/scale/deck.scale.css">
 
+  <!-- deck.js-codemirror styling -->
+  <link rel="stylesheet" href="$data-dir$deck.js-codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="$data-dir$deck.js-codemirror/themes/default.css">
+
   <!-- Style theme. More available in /themes/style/ or create your own. -->
   <link rel="stylesheet" href="$data-dir$$if(style-theme)$$style-theme$$else$deck.js/themes/style/swiss.css$endif$">
 
@@ -97,6 +101,46 @@ $endfor$
 <script src="$data-dir$deck.js/extensions/status/deck.status.js"></script>
 <script src="$data-dir$deck.js/extensions/navigation/deck.navigation.js"></script>
 <script src="$data-dir$deck.js/extensions/scale/deck.scale.js"></script>
+
+<!-- deck.js-codemirror scripts --!>
+<script src="$data-dir$deck.js-codemirror/codemirror.js"></script>
+<script type="text/javascript">
+(function() {
+  var modes = [];
+  jQuery(".code").each(function() {
+    var cnt = jQuery(this),
+        mode = cnt.attr("mode"),
+        scripts = [];
+
+    // Markdown wraps code elements in <pre><code> with the codemirror attributes
+    // on the pre element, so we need to move the content up to the pre element
+    if (cnt.is("pre")) {
+      var codeElem = cnt.children("code");
+      if (codeElem.length > 0) {
+        cnt.html(codeElem.html());
+      }
+    }
+
+    // Load code modes based on what modes are requested
+    if (jQuery.inArray(mode, modes) < 0) {
+      modes.push(mode);
+      scripts = [mode];
+
+      // Special need modes
+      if (mode == "htmlmixed") {
+        scripts.push("xml");
+        scripts.push("css");
+      }
+
+      for (var i = 0; i < scripts.length; i++) {
+        // Synchronously load the scripts before loading the deck.js functionality
+        document.write('<script src="$data-dir$/deck.js-codemirror/mode/' + scripts[i] + "/" + scripts[i] + '.js"></s' + 'cript>');
+      }
+    }
+  });
+})();
+</script>
+<script src="$data-dir$deck.js-codemirror/deck.codemirror.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
