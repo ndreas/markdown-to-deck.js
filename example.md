@@ -42,7 +42,7 @@ frankfurter biltong.
 
 ---
 
-## Page with a blockquotes
+## Page with blockquotes
 
 > Bacon ipsum dolor sit amet ham drumstick shank, bacon shankle swine ham
 > hock sirloin tenderloin ground round tongue.

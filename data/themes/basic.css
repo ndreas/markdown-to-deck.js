@@ -1,6 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700italic,700);
 
 .deck-container {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    display: -ms-box;
+    -ms-box-pack: center;
+    -ms-box-align: center;
+    display: box;
+    box-pack: center;
+    box-align: center;
     font-family: "Gentium Book Basic", "Palatino", "Palatino Linotype", serif;
     font-size: 2.5em;
     background: #f0f1eb;
@@ -15,7 +27,17 @@
 }
 
 .deck-container section {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    display: -ms-box;
+    -ms-box-pack: center;
+    -ms-box-align: center;
     text-align: center;
+    padding-bottom: 1.5em !important;
 }
 
 .deck-container p {
@@ -28,6 +50,7 @@
 .deck-container h4,
 .deck-container h5,
 .deck-container h6 {
+    padding: 0;
     border: 0;
     color: #383d3d;
     line-height: 0.9em;
